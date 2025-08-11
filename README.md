@@ -39,7 +39,10 @@ The app demonstrates clean architecture, efficient state management with Bloc, o
 ## video
 
 
-https://github.com/user-attachments/assets/af7d9b12-79f7-45a9-bb4b-4d52da8f58c4
+
+
+https://github.com/user-attachments/assets/8ef0d356-389a-4390-9852-7c8d7c08e153
+
 
 
 
@@ -83,6 +86,7 @@ https://github.com/user-attachments/assets/af7d9b12-79f7-45a9-bb4b-4d52da8f58c4
    ```bash
    git clone https://github.com/your-username/rick-morty-explorer.git
    cd rick-morty-explorer
+
 
 
 

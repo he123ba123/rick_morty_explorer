@@ -36,10 +36,31 @@ The app demonstrates clean architecture, efficient state management with Bloc, o
 - **Data Layer**: Remote and local data sources, repository implementations, models, and mappers. 🔗
 
 ---
+## video
+
+
+https://github.com/user-attachments/assets/af7d9b12-79f7-45a9-bb4b-4d52da8f58c4
+
+
+
+--- 
 
 ## Screenshots 📸
 
-*(Add screenshots here)*
+
+<img width="441" height="910" alt="Screenshot 2025-08-11 195221" src="https://github.com/user-attachments/assets/fd2dc897-9810-4f38-ae5c-b54291245f80" />
+
+
+<img width="453" height="900" alt="Screenshot 2025-08-11 195331" src="https://github.com/user-attachments/assets/dd9f34fd-d590-4312-86f0-843e328e5ff7" />
+
+
+<img width="461" height="889" alt="Screenshot 2025-08-11 195403" src="https://github.com/user-attachments/assets/996343ad-0d04-49d6-b3e8-d2f0bd484671" />
+
+
+<img width="447" height="898" alt="Screenshot 2025-08-11 195446" src="https://github.com/user-attachments/assets/b3f17411-3272-4a0f-beb4-950951fab072" />
+
+
+<img width="460" height="903" alt="Screenshot 2025-08-11 195507" src="https://github.com/user-attachments/assets/573e1b57-fb5b-4b0b-838c-896cc240b8e3" />
 
 ---
 
@@ -56,3 +77,4 @@ The app demonstrates clean architecture, efficient state management with Bloc, o
    ```bash
    git clone https://github.com/your-username/rick-morty-explorer.git
    cd rick-morty-explorer
+

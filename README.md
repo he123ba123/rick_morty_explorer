@@ -60,6 +60,11 @@ https://github.com/user-attachments/assets/af7d9b12-79f7-45a9-bb4b-4d52da8f58c4
 <img width="461" height="889" alt="Screenshot 2025-08-11 195403" src="https://github.com/user-attachments/assets/996343ad-0d04-49d6-b3e8-d2f0bd484671" />
 
 
+
+<img width="421" height="857" alt="Screenshot 2025-08-11 203733" src="https://github.com/user-attachments/assets/457b0a47-d654-4858-a6ad-4c688b64d3c3" />
+
+
+
 <img width="447" height="898" alt="Screenshot 2025-08-11 195446" src="https://github.com/user-attachments/assets/b3f17411-3272-4a0f-beb4-950951fab072" />
 
 
@@ -78,5 +83,6 @@ https://github.com/user-attachments/assets/af7d9b12-79f7-45a9-bb4b-4d52da8f58c4
    ```bash
    git clone https://github.com/your-username/rick-morty-explorer.git
    cd rick-morty-explorer
+
 
 

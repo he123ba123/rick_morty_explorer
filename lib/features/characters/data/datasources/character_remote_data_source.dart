@@ -5,7 +5,7 @@ import '../models/character_model.dart';
 
 abstract class CharacterRemoteDataSource {
   Future<List<CharacterModel>> getCharacters(int page);
-  Future<List<CharacterModel>> searchCharacters(String query);
+  Future<List<CharacterModel>> searchCharacters(String query, {String? status, String? species});
   Future<CharacterModel> getCharacterDetails(int id);
 }
 
@@ -31,9 +31,16 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
   }
 
   @override
-  Future<List<CharacterModel>> searchCharacters(String query) async {
+  Future<List<CharacterModel>> searchCharacters(String query, {String? status, String? species}) async {
     try {
-      final response = await dio.get("${ApiConstants.charactersEndpoint}?name=$query");
+      final params = {
+        'name': query,
+        if (status != null && status.isNotEmpty) 'status': status,
+        if (species != null && species.isNotEmpty) 'species': species,
+      };
+
+      final response = await dio.get(ApiConstants.charactersEndpoint, queryParameters: params);
+
       if (response.statusCode == 200) {
         return (response.data['results'] as List)
             .map((json) => CharacterModel.fromJson(json))

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rick_morty_explorer/core/constants/app_colors.dart';
 import '../../domain/entities/character.dart';
 import '../pages/character_details_page.dart';
 import '../bloc/cubit/favorites_cubit.dart';
@@ -19,7 +21,7 @@ class CharacterCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8.0, left: 10, right: 10),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color: const Color(0xFF8879B4),
+        color: AppColors.card,
         margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: InkWell(
           onTap: () {
@@ -41,18 +43,18 @@ class CharacterCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
                       character.image,
-                      width: 80,
-                      height: 100,
+                      width: 80.w,
+                      height: 100.h,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                const SizedBox(width: 17),
+                 SizedBox(width: 17.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 10),
+                       SizedBox(height: 10.h),
                       Text(
                         character.name,
 
@@ -61,23 +63,23 @@ class CharacterCard extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: AppColors.white,
                         ),
                       ),
-                      const SizedBox(height: 6),
+                       SizedBox(height: 6.h),
                       Text(
                         "Status: ${character.status}",
                         style: const TextStyle(
                           fontSize: 15,
-                          color: Colors.white,
+                          color: AppColors.white,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                       SizedBox(height: 4.h),
                       Text(
                         "Species: ${character.species}",
-                        style: const TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
+                        style:  TextStyle(
+                          fontSize: 15.sp,
+                          color: AppColors.white,
                         ),
                       ),
                     ],
@@ -86,7 +88,7 @@ class CharacterCard extends StatelessWidget {
                 IconButton(
                   icon: Icon(
                     isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: Colors.white,
+                    color: AppColors.white,
                   ),
                   onPressed: () {
                     context.read<FavoritesCubit>().toggle(character);

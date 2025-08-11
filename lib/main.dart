@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rick_morty_explorer/features/characters/presentation/pages/splash_screen.dart';
 import 'core/di/injection_container.dart' as di;
 import 'features/characters/presentation/bloc/cubit/character_details_cubit.dart';
@@ -20,6 +21,7 @@ Future<void> main() async {
   Hive.registerAdapter(CharacterAdapter());
   await Hive.openBox('characters');
   await Hive.openBox('favorites');
+
   // Init Dependency Injection
   await di.init();
 
@@ -37,23 +39,30 @@ class MyApp extends StatelessWidget {
           create: (_) => di.sl<CharacterListCubit>()..loadCharacters(),
         ),
         BlocProvider(create: (_) => di.sl<SearchCubit>()),
-        BlocProvider(create: (_) => di.sl<NetworkCubit>()), 
+        BlocProvider(create: (_) => di.sl<NetworkCubit>()),
         BlocProvider(create: (_) => di.sl<FavoritesCubit>()..loadFavorites()),
         BlocProvider(create: (_) => di.sl<CharacterDetailsCubit>()),
       ],
-      child: MaterialApp(
-        title: 'Rick & Morty Explorer',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-          scaffoldBackgroundColor: Colors.grey[200],
-        ),
-        initialRoute: '/splash',
-        routes: {
-           '/splash': (_) => const SplashScreen(),
-          '/': (_) => const HomePage(),
-          '/favorites': (_) => const FavoritesPage(),
-          // '/details': (_) => const CharacterDetailsPage(),
+      child: ScreenUtilInit(
+        designSize: const Size(360, 690), 
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            title: 'Rick & Morty Explorer',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.green,
+              scaffoldBackgroundColor: Colors.grey[200],
+            ),
+            initialRoute: '/splash',
+            routes: {
+              '/splash': (_) => const SplashScreen(),
+              '/': (_) => const HomePage(),
+              '/favorites': (_) => const FavoritesPage(),
+              // '/details': (_) => const CharacterDetailsPage(),
+            },
+          );
         },
       ),
     );

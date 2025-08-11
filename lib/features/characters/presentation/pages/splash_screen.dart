@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rick_morty_explorer/core/constants/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,20 +36,21 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image.asset('assets/images/splash.jpg', fit: BoxFit.cover),
           ),
           Positioned(
-            left: 130,
-            bottom: 60,
+            left: 130.w,
+            bottom: 60.h,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF8879B4),
+                backgroundColor: AppColors.card,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 10,
                 ),
               ),
               onPressed: _navigateToHome,
-              child: const Text(
+              child:  Text(
                 'Go to Home',
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20.sp
+                , color: AppColors.white),
               ),
             ),
           ),

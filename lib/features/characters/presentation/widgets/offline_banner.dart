@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/constants/app_colors.dart';
 import '../bloc/cubit/network_cubit.dart';
 
 class OfflineBanner extends StatelessWidget {
@@ -16,7 +17,7 @@ class OfflineBanner extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: const Text(
               "Offline Mode",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.white),
               textAlign: TextAlign.center,
             ),
           );

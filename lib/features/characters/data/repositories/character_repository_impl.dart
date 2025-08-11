@@ -43,10 +43,16 @@ class CharacterRepositoryImpl implements CharacterRepository {
   }
 
   @override
-  Future<Either<Failure, List<Character>>> searchCharacters(String query) async {
+  Future<Either<Failure, List<Character>>> searchCharacters(
+    String query, {String? status, String? species}
+  ) async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteCharacters = await remoteDataSource.searchCharacters(query);
+        final remoteCharacters = await remoteDataSource.searchCharacters(
+          query,
+          status: status,
+          species: species,
+        );
         return Right(remoteCharacters);
       } on ServerException {
         return Left(ServerFailure());
@@ -55,6 +61,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
       return Left(ServerFailure());
     }
   }
+
 
   @override
   Future<Either<Failure, Character>> getCharacterDetails(int id) async {

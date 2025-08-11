@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/constants/app_colors.dart';
 import '../../domain/entities/character.dart';
 
 class CharacterDetailsPage extends StatelessWidget {
@@ -8,22 +10,22 @@ class CharacterDetailsPage extends StatelessWidget {
 
   Widget _buildInfoRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding:  EdgeInsets.symmetric(vertical: 6.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "$label: ",
-            style: const TextStyle(
+            style:  TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
-              color: Colors.white,
+              fontSize: 18.sp,
+              color: AppColors.card,
             ),
           ),
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(fontSize: 18, color: Colors.white70),
+              style:  TextStyle(fontSize: 18.sp, color: AppColors.white),
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
@@ -36,16 +38,16 @@ class CharacterDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2F1775),
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
           character.name,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: AppColors.white),
         ),
-        backgroundColor: const Color(0xFF2F1775),
+        backgroundColor: AppColors.background,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding:  EdgeInsets.all(20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,14 +58,14 @@ class CharacterDetailsPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   child: Image.network(
                     character.image,
-                    height: 220,
-                    width: 220,
+                    height: 220.h,
+                    width: 220.w,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
             Card(
               color: const Color(0xFF3A1B8A),
               shape: RoundedRectangleBorder(
@@ -71,7 +73,7 @@ class CharacterDetailsPage extends StatelessWidget {
               ),
               elevation: 4,
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding:  EdgeInsets.all(16.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -84,7 +86,7 @@ class CharacterDetailsPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20.h),
             Card(
               color: const Color(0xFF3A1B8A),
               shape: RoundedRectangleBorder(
@@ -92,7 +94,7 @@ class CharacterDetailsPage extends StatelessWidget {
               ),
               elevation: 4,
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding:  EdgeInsets.all(16.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

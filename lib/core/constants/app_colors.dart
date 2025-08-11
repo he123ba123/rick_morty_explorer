@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-
-  static const Color secondary = Color(0xFF90E0EF);
-  static const Color accent = Color(0xFFCAF0F8);
-  static const Color error = Colors.red;
-  static const Color background = Color(0xFFF0F4F8);
+  static const Color card =  Color(0xFF8879B4);
+  static const Color white = Colors.white;
+  static const Color background =  Color(0xFF2F1775);
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rick_morty_explorer/core/constants/app_colors.dart';
 import '../bloc/cubit/favorites_cubit.dart';
 import '../widgets/character_card.dart';
 
@@ -9,34 +11,38 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2F1775),
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF2F1775),
-        title: Image.asset('assets/images/morty.jpg', height: 200, width: 200),
+        backgroundColor: AppColors.background,
+        title: Image.asset(
+          'assets/images/morty.jpg',
+          height: 200.h,
+          width: 200.w,
+        ),
       ),
       body: BlocBuilder<FavoritesCubit, List>(
         builder: (context, favorites) {
           if (favorites.isEmpty) {
             return Center(
               child: Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20.0.w),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
                       'assets/images/morty.jpg',
-                      height: 200,
-                      width: 200,
+                      height: 200.h,
+                      width: 200.w,
                     ),
                     Text(
                       "Don't worry my friend , you have no favorite characters yet",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(fontSize: 18.sp, color: AppColors.white),
                     ),
                     Image.asset(
                       'assets/images/rick.jpg',
-                      height: 400,
-                      width: 200,
+                      height: 300.h,
+                      width: 200.w,
                     ),
                   ],
                 ),

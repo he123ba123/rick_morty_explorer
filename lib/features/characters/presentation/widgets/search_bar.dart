@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/constants/app_colors.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final ValueChanged<String> onChanged;
@@ -16,26 +19,26 @@ class SearchBarWidget extends StatelessWidget {
         decoration: InputDecoration(
           hintText: "Search characters...",
 
-          hintStyle: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+          hintStyle: TextStyle(
+            color: AppColors.white,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w500,
           ),
-          prefixIcon: const Icon(Icons.search, color: Colors.white),
+          prefixIcon: const Icon(Icons.search, color: AppColors.white),
           filled: true,
 
-          fillColor: const Color(0xFF8879B4),
+          fillColor: AppColors.card,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: AppColors.white),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: AppColors.white),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide: const BorderSide(color: AppColors.white),
           ),
         ),
       ),

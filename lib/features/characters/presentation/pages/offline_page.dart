@@ -13,7 +13,7 @@ class OfflinePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
+          children: [
             Icon(Icons.wifi_rounded, size: 250, color: AppColors.white),
             SizedBox(height: 20.h),
             Text(

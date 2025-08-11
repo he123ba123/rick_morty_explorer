@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 100), () {
       if (!_isNavigated) {
         _navigateToHome();
       }
@@ -33,13 +33,18 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           SizedBox.expand(
-            child: Image.asset('assets/images/splash.jpg', fit: BoxFit.cover),
+            child: Image.asset(
+              'assets/images/splash.jpg',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+            ),
           ),
 
           Positioned(
             left: 0,
             right: 0,
-            bottom: 60.h,
+            bottom: 45.h,
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -51,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 onPressed: _navigateToHome,
                 child: Text(
-                  'Go to Home',
+                  'Get Started',
                   style: TextStyle(fontSize: 20.sp, color: AppColors.white),
                 ),
               ),

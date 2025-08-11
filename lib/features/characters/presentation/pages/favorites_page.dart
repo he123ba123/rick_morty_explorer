@@ -12,23 +12,31 @@ class FavoritesPage extends StatelessWidget {
       backgroundColor: const Color(0xFF2F1775),
       appBar: AppBar(
         backgroundColor: const Color(0xFF2F1775),
-        title: const Text("Favorites", style: TextStyle(color: Colors.white)),
+        title: Image.asset('assets/images/morty.jpg', height: 200, width: 200),
       ),
       body: BlocBuilder<FavoritesCubit, List>(
         builder: (context, favorites) {
           if (favorites.isEmpty) {
-            return const Center(
+            return Center(
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(Icons.favorite_border, size: 50, color: Colors.white),
-                    SizedBox(height: 10),
+                    Image.asset(
+                      'assets/images/morty.jpg',
+                      height: 200,
+                      width: 200,
+                    ),
                     Text(
                       "Don't worry my friend , you have no favorite characters yet",
                       style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    Image.asset(
+                      'assets/images/rick.jpg',
+                      height: 400,
+                      width: 200,
                     ),
                   ],
                 ),

@@ -62,10 +62,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: const Color(0xFF2F1775),
           appBar: AppBar(
             backgroundColor: const Color(0xFF2F1775),
-            title: const Text(
-              "Rick & Morty Characters",
-              style: TextStyle(color: Colors.white),
-            ),
+            title: Image.asset('assets/images/morty.jpg', height: 200, width: 200),
             centerTitle: true,
             actions: [
               IconButton(

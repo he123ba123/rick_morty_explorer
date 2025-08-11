@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 900), () {
+    Future.delayed(const Duration(seconds: 5), () {
       if (!_isNavigated) {
         _navigateToHome();
       }
@@ -32,25 +32,28 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
+          SizedBox.expand(
             child: Image.asset('assets/images/splash.jpg', fit: BoxFit.cover),
           ),
+
           Positioned(
-            left: 130.w,
+            left: 0,
+            right: 0,
             bottom: 60.h,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.card,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
+            child: Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.card,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                 ),
-              ),
-              onPressed: _navigateToHome,
-              child:  Text(
-                'Go to Home',
-                style: TextStyle(fontSize: 20.sp
-                , color: AppColors.white),
+                onPressed: _navigateToHome,
+                child: Text(
+                  'Go to Home',
+                  style: TextStyle(fontSize: 20.sp, color: AppColors.white),
+                ),
               ),
             ),
           ),
